@@ -1,6 +1,5 @@
 # This file contains all the development requirements for our linting toolchain.
 # Don't forget to pin your dependencies!
--r requirements.txt
 
 # Base tools
 flake8~=3.9
