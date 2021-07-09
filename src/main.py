@@ -4,7 +4,7 @@ from prompt_toolkit.shortcuts import message_dialog
 def main() -> None:
     """Main application"""
     diag = message_dialog(
-        title="Enlightened Elks",
+        title="Enlightened Elks test",
         text="Hello world!\nPress ENTER to quit.",
     )
     diag.run()
