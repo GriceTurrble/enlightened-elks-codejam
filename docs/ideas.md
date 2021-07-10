@@ -42,13 +42,13 @@ with you freight containers analogy, now i kinda want to name it (whatever our p
 -You have to escape using only whats available to you
 -in a computer
 Do you know if it is possible to stage a series of terminals or screens. Like create multiple ones independently and have them go from one to another
-also idk why but glados and portal stuff really come to mind as well
+also idk why but GlaDOS and portal stuff really come to mind as well
 ```
 
 **Xiang**
 
 ```
-Seeing lucid_frog's idea of Pandora's box, we could maybe make a program that unleashes virus(es) if you open the "box" and you have to do tasks, or you could take this idea in a more prankster sort of manner and just make the consquences of opening the box a series of silly tricks/gags.  
+Seeing lucid_frog's idea of Pandora's box, we could maybe make a program that unleashes virus(es) if you open the "box" and you have to do tasks, or you could take this idea in a more prankster sort of manner and just make the consequences of opening the box a series of silly tricks/gags.
 ```
 
 **GriceTurrble**
@@ -61,7 +61,7 @@ Seeing lucid_frog's idea of Pandora's box, we could maybe make a program that un
 
 What if we created some sort of interactive story/game. The user starts out in a situation that doesnt really make sense to them (it's inside a computer), things are backwards, theres 1's and 0's and is introduced to some sort of GlaDOS who in GlaDOS fashion "helps" them out of the box they are in by leading them through a series of full_screen apps/dialog boxes that range from easy to ridiculous and as the user progresses they learn more and more along the way.
 
-one benefit to something like that is it could give us all a chance to implement our own ideas in individual screens/scenarious which would be nice
+one benefit to something like that is it could give us all a chance to implement our own ideas in individual screens/scenarios which would be nice
 
 ## Final-ish
 
