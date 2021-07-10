@@ -93,7 +93,8 @@ def _(event: Any) -> None:
 
 
 def default_buffer_changed(_: Any) -> None:
-    """
+    """Changes the buffer.
+
     When the buffer on the left changes, update the buffer on
     the right. We just reverse the text.
     """
