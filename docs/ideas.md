@@ -6,7 +6,7 @@ Ideas the team has come up with to play with the jam theme, **Think Inside the B
 
 _Following copied from the Discord chat._
 
-## GriceTurrble
+**GriceTurrble**
 
 ```
 - Opposite of "outside the box" -> non-traditional thinking -> opposite would be doing things the "normal" way.
@@ -17,7 +17,7 @@ Randomly, I like how there's a cloud solution literally called "box.com".
 With the Color of Magic concept, I was like "what if every time we make Dockerfiles, it's not a computer making containers, but a really fast sysadmin making a VM?"
 ```
 
-## lucid_frog
+**lucid_frog**
 
 ```
 the box:
@@ -33,7 +33,7 @@ the box:
 with you freight containers analogy, now i kinda want to name it (whatever our project is): Cargo
 ```
 
-## Nomtook
+**Nomtook**
 
 ```
 -Makes me think of being trapped
@@ -45,12 +45,24 @@ Do you know if it is possible to stage a series of terminals or screens. Like cr
 also idk why but glados and portal stuff really come to mind as well
 ```
 
-## Xiang
+**Xiang**
 
 ```
 idk maybe inside the box means that we arent creating something new but improving on something old?
 ```
 
-## Other notes
+**GriceTurrble**
 
 - Prompt toolkit can "trap" the user in the screen unless keyboard events are configured. So, it's possible to dictate when a user is able to quit the program (outside crashing their terminal, that is).
+
+## Refinements
+
+**Nomtook**
+
+What if we created some sort of interactive story/game. The user starts out in a situation that doesnt really make sense to them (it's inside a computer), things are backwards, theres 1's and 0's and is introduced to some sort of GlaDOS who in GlaDOS fashion "helps" them out of the box they are in by leading them through a series of full_screen apps/dialog boxes that range from easy to ridiculous and as the user progresses they learn more and more along the way.
+
+one benefit to something like that is it could give us all a chance to implement our own ideas in individual screens/scenarious which would be nice
+
+## Final-ish
+
+*TBD*
