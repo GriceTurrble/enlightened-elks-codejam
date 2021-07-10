@@ -48,7 +48,7 @@ also idk why but glados and portal stuff really come to mind as well
 **Xiang**
 
 ```
-idk maybe inside the box means that we arent creating something new but improving on something old?
+Seeing lucid_frog's idea of Pandora's box, we could maybe make a program that unleashes virus(es) if you open the "box" and you have to do tasks, or you could take this idea in a more prankster sort of manner and just make the consquences of opening the box a series of silly tricks/gags.  
 ```
 
 **GriceTurrble**
