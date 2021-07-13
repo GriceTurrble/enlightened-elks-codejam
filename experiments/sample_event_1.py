@@ -1,8 +1,9 @@
-import pyinputplus as pyip
 import time
 
+import pyinputplus as pyip
 
 """ Will need to pip install pyinputplus to run!
+
 This will be responsible for running the 'riddles in the dark' IMPOSSIBLE EVENT.
 
 -give away a hint about 'keyword' that will 'destroy AI'

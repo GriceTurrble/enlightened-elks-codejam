@@ -1,5 +1,5 @@
-"""
-This module will display a snake game within the command line interface.
+"""This module will display a snake game within the command line interface.
+
 The user input will appear on the left and the game on the right.
 """
 
