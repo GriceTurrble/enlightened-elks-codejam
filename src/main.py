@@ -1,50 +1,35 @@
+import argparse
 import asyncio
+from pathlib import Path
 
 from prompt_toolkit import Application
+from prompt_toolkit.formatted_text.pygments import PygmentsTokens
 from prompt_toolkit.key_binding import KeyBindings
 from prompt_toolkit.layout.containers import HSplit, Window
 from prompt_toolkit.layout.controls import FormattedTextControl
 from prompt_toolkit.layout.layout import Layout
 from prompt_toolkit.utils import Event
-from prompt_toolkit.widgets import TextArea
+
+from log_content import LogContentState
+
+BASE_DIR = Path(__file__).resolve().parent
+SAMPLE = BASE_DIR.parent / "data" / "sample.log"
+
+
+log_content_state = LogContentState()
+
 
 # top_bar = Window(height=1)
-text_ = """
+base_text = """
 Hello world
-
-For the time being, this app just screws with your inputs by periodically
-erasing the first character in the buffer below, every 0.5 seconds.
-
-This can be one of many "curveball" we can configure via some flags,
-intended to mess them up while they type in their answers.
-
-Remains to be seen exactly how this will play out, but it can be one of the ways we try
-to have the user beat a puzzle while the game makes their typing more difficult.
 
 Press Ctrl-C to quit."""
 
 output_window = Window(
-    FormattedTextControl(text_),
-    style="bg:white black",
+    FormattedTextControl(
+        base_text,
+    ),
 )
-
-
-text_field = TextArea(
-    text="...Lookit me, I'm disappearing, nooooooo!\n",
-    height=3,
-)
-text_field.buffer.cursor_down()
-
-root_container = HSplit(
-    children=[
-        output_window,
-        text_field,
-    ],
-    padding=1,
-    padding_char="-",
-)
-
-layout = Layout(root_container)
 
 
 kb = KeyBindings()
@@ -56,8 +41,54 @@ def exit_(event: Event) -> None:
     event.app.exit()
 
 
+@kb.add("left")
+@kb.add("up")
+def previous_line(event: Event) -> None:
+    """Press left or up to change to previous log line."""
+    log_content_state.move_to_previous()
+    show_current_page()
+
+
+@kb.add("right")
+@kb.add("down")
+def next_line(event: Event) -> None:
+    """Press left or up to change to next log line."""
+    log_content_state.move_to_next()
+    show_current_page()
+
+
+@kb.add("f")
+def first_line(event: Event) -> None:
+    """Press f to change to first log line."""
+    log_content_state.move_to_first()
+    show_current_page()
+
+
+@kb.add("l")
+def last_line(event: Event) -> None:
+    """Press l to change to last log line."""
+    log_content_state.move_to_last()
+    show_current_page()
+
+
+body = HSplit(
+    children=[
+        output_window,
+    ],
+    padding=1,
+    padding_char="-",
+    key_bindings=kb,
+)
+
+
+layout = Layout(body)
+
+
 # Main application object
-application = Application(layout=layout, full_screen=True, key_bindings=kb)
+application = Application(
+    layout=layout,
+    full_screen=True,
+)
 """Main app object.
 
 Defined in global scope here so that we can check its state from other functions
@@ -65,31 +96,30 @@ Defined in global scope here so that we can check its state from other functions
 """
 
 
-async def throw_curveballs() -> None:
-    """Periodically screw with the user's input.
+def show_current_page(lexed: bool = True) -> PygmentsTokens:
+    """Return the current log line from the logger content state."""
+    output_window.content.text = log_content_state.current_line(lexed=lexed)
 
-    Requires the app to be running, otherwise the function will exit immediately
-    (and likely the entire program will close).
-    """
 
-    def remove_first_char() -> None:
-        text_field.buffer.transform_region(
-            from_=0,
-            to=1,
-            transform_callback=lambda x: "",
-        )
-
-    while application.is_running:
-        # If the app closes, stop messing with things
-        await asyncio.sleep(0.5)
-        remove_first_char()
+def get_parser() -> argparse.ArgumentParser:
+    """Does a thing"""
+    parser = argparse.ArgumentParser(description="JSONline log viewer")
+    parser.add_argument("-f", "--file", required=False, type=Path)
+    return parser
 
 
 async def main() -> None:
     """Main application"""
+    global current
+    parser = get_parser()
+    options = parser.parse_args()
+    filepath = options.file  # type: Path
+    if filepath and filepath.exists():
+        log_content_state.load_file(filepath)
+        show_current_page()
+
     await asyncio.gather(
         application.run_async(),
-        throw_curveballs(),
     )
 
 

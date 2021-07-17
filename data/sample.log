@@ -1,0 +1,5 @@
+{"event":"Hello world!","level":"info","timestamp":"2021-07-17T12:57:14.722737"}
+{"event":"This is a log entry","level":"info","timestamp":"2021-07-17T12:57:15.734773"}
+{"some_data":3,"event":"Here's another","level":"info","timestamp":"2021-07-17T12:57:16.739243"}
+{"foo":"bar","baz":{"spam":"ham"},"event":"I don't know what else to put here, honestly","level":"info","timestamp":"2021-07-17T12:57:17.745774"}
+{"event":"Latest line entry. Goodbye for now!","level":"info","timestamp":"2021-07-17T12:57:18.748919"}
